@@ -12,7 +12,6 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 		<app.runtime>4.4.0-20211026</app.runtime>
 		<mule.maven.plugin.version>3.5.2</mule.maven.plugin.version>
 	</properties>
@@ -37,9 +36,9 @@
 						<username>rohit_nov21</username>
 						<password>Humtum@2083</password>
 						<muleVersion>4.4.0</muleVersion>
-						<applicationName>exp-world-TimeZone</applicationName>
+						<applicationName>exp-world-TimeZone-${environment}</applicationName>
 						<workers>1</workers>
-						<environment>Sandbox</environment>
+						<environment>${environment}</environment>
 						<workerType>Micro</workerType>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
