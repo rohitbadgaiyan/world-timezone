@@ -30,15 +30,17 @@
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-				<cloudHubDeployment>
-					<username>rohit_nov21</username>
-					<password>Humtum@2083</password>
-					<environment>Sandbox</environment>
-					<workers>1</workers>
-					<workerType>Micro</workerType>
-					<applicationName>worldtimezone-service</applicationName>
-					<muleVersion>4.4.0</muleVersion>
-				</cloudHubDeployment>
+					<cloudHubDeployment>
+						<uri>https://anypoint.mulesoft.com</uri>
+						<username>rohit_nov21</username>
+						<password>Humtum@2083</password>
+						<muleVersion>4.4.0</muleVersion>
+						<applicationName>exp-world_TimeZone</applicationName>
+						<workers>1</workers>
+						<environment>Sandbox</environment>
+						<workerType>Micro</workerType>
+						<objectStoreV2>true</objectStoreV2>
+					</cloudHubDeployment>
 				</configuration>
 			</plugin>
 		</plugins>
