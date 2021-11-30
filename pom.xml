@@ -35,7 +35,7 @@
 						<username>rohit_nov21</username>
 						<password>Humtum@2083</password>
 						<muleVersion>4.4.0</muleVersion>
-						<applicationName>exp-world_TimeZone</applicationName>
+						<applicationName>exp-world-TimeZone</applicationName>
 						<workers>1</workers>
 						<environment>Sandbox</environment>
 						<workerType>Micro</workerType>
