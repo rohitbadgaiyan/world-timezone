@@ -7,6 +7,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<flow name="timezoneFlow" doc:id="3221deb7-4a86-4af0-990f-9d9fb4e32293" >
 		<http:listener doc:name="Listener" doc:id="2d9deaf1-757d-4c4f-92aa-24a457b8b807" config-ref="HTTP_Listener_config" path="/{region}/{city}"/>
+		<logger level="INFO" doc:name="Logger" doc:id="22e50b59-9e04-4ace-987a-56c09dec739a" message='"I am testing the project in Test env."'/>
 		<http:request method="GET" doc:name="Request" doc:id="c3f7541a-81d8-4d9d-97d4-b567e4a6fd4e" config-ref="HTTP_Request_configuration" path="/{region}/{city}">
 			<http:uri-params ><![CDATA[#[output application/java
 ---

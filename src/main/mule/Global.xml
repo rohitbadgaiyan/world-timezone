@@ -7,11 +7,12 @@
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
 	
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="c945ff3c-5d31-47da-9586-98220bfa799b" basePath="/timezone" >
-		<http:listener-connection host="0.0.0.0" port="8089" />
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
 	</http:listener-config>
-	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="3a17f007-dd2e-4628-b878-89bb9a3739c3" basePath="/api/timezone" >
-		<http:request-connection host="worldtimeapi.org" />
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="3a17f007-dd2e-4628-b878-89bb9a3739c3" basePath="${API.uri}" >
+		<http:request-connection host="${API.host}" />
 	</http:request-config>
 	<global-property doc:name="Global Property" doc:id="63527f73-8ce9-4e98-8763-96cd08f863ef" name="env" value="Test" />
+	<configuration-properties doc:name="Configuration properties" doc:id="2cc725f9-654c-4ac2-b7d9-ed02d2f08c1f" file="${env}.yaml" />
 	
 </mule>
