@@ -5,3 +5,6 @@ http:
 API:
   host: "worldtimeapi.org"
   uri: "/api/timezone"
+  
+logging:
+  msg: "I am testing in Test env."
