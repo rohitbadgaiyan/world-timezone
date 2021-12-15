@@ -32,13 +32,16 @@
 				<configuration>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-						<username>rohit_nov21</username>
-						<password>Humtum@2083</password>
+						<connectedAppClientId>eba5046d63df4a7bbeb4cec6d48e519e</connectedAppClientId>
+						<connectedAppClientSecret>2d3C2AcBAf534e528C26b8364968d783</connectedAppClientSecret>
+						<connectedAppGrantType>client_credentials</connectedAppGrantType>
+						<!--<username>${username}</username>
+						<password>${password}</password>-->
 						<muleVersion>4.4.0</muleVersion>
 						<applicationName>exp-world-TimeZone-${environment}</applicationName>
-						<workers>1</workers>
+						<workers>${workers}</workers>
 						<environment>${environment}</environment>
-						<workerType>Micro</workerType>
+						<workerType>${workertype}</workerType>
 						<objectStoreV2>true</objectStoreV2>
 					</cloudHubDeployment>
 				</configuration>
