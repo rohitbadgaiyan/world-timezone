@@ -2,11 +2,12 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.mycompany</groupId>
+	<groupId>6b77a403-b331-44a6-8744-5bc5fe931c09</groupId>
 	<artifactId>timezone</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
 	<name>timezone</name>
+	<description/>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -30,17 +31,17 @@
 				<configuration>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-						<!--<username>${username}</username>
-						<password>${password}</password>-->
+						<username>${username}</username>
+						<password>${password}</password>
 						<muleVersion>4.4.0</muleVersion>
-						<applicationName>exp-world-TimeZone-${environment}</applicationName>
+						<applicationName>e-world-TimeZone-${environment}</applicationName>
 						<workers>${workers}</workers>
 						<environment>${environment}</environment>
 						<workerType>${workertype}</workerType>
 						<objectStoreV2>true</objectStoreV2>
-						<connectedAppClientId>${clientId}</connectedAppClientId>
+						<!-- <connectedAppClientId>${clientId}</connectedAppClientId>
 						<connectedAppClientSecret>${clientSecret}</connectedAppClientSecret>
-						<connectedAppGrantType>${grantType}</connectedAppGrantType>
+						<connectedAppGrantType>${grantType}</connectedAppGrantType> -->
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
@@ -135,5 +136,4 @@
 			</snapshots>
 		</pluginRepository>
 	</pluginRepositories>
-
 </project>
