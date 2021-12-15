@@ -6,9 +6,7 @@
 	<artifactId>timezone</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>mule-application</packaging>
-
 	<name>timezone</name>
-
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -32,9 +30,6 @@
 				<configuration>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-						<connectedAppClientId>eba5046d63df4a7bbeb4cec6d48e519e</connectedAppClientId>
-						<connectedAppClientSecret>2d3C2AcBAf534e528C26b8364968d783</connectedAppClientSecret>
-						<connectedAppGrantType>client_credentials</connectedAppGrantType>
 						<!--<username>${username}</username>
 						<password>${password}</password>-->
 						<muleVersion>4.4.0</muleVersion>
@@ -43,6 +38,9 @@
 						<environment>${environment}</environment>
 						<workerType>${workertype}</workerType>
 						<objectStoreV2>true</objectStoreV2>
+						<connectedAppClientId>${clientId}</connectedAppClientId>
+						<connectedAppClientSecret>${clientSecret}</connectedAppClientSecret>
+						<connectedAppGrantType>${grantType}</connectedAppGrantType>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
@@ -111,7 +109,6 @@
 			<classifier>mule-plugin</classifier>
 		</dependency>
 	</dependencies>
-
 	<repositories>
 		<repository>
 			<id>anypoint-exchange-v2</id>
