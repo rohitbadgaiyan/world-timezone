@@ -31,17 +31,17 @@
 				<configuration>
 					<cloudHubDeployment>
 						<uri>https://anypoint.mulesoft.com</uri>
-						<username>${username}</username>
-						<password>${password}</password>
+						<!-- <username>${username}</username>
+						<password>${password}</password> -->
 						<muleVersion>4.4.0</muleVersion>
 						<applicationName>e-world-TimeZone-${environment}</applicationName>
 						<workers>${workers}</workers>
 						<environment>${environment}</environment>
 						<workerType>${workertype}</workerType>
 						<objectStoreV2>true</objectStoreV2>
-						<!-- <connectedAppClientId>${clientId}</connectedAppClientId>
+						<connectedAppClientId>${clientId}</connectedAppClientId>
 						<connectedAppClientSecret>${clientSecret}</connectedAppClientSecret>
-						<connectedAppGrantType>${grantType}</connectedAppGrantType> -->
+						<connectedAppGrantType>${grantType}</connectedAppGrantType>
 					</cloudHubDeployment>
 				</configuration>
 			</plugin>
