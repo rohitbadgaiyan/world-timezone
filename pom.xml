@@ -42,7 +42,11 @@
 						<connectedAppClientId>${clientId}</connectedAppClientId>
 						<connectedAppClientSecret>${clientSecret}</connectedAppClientSecret>
 						<connectedAppGrantType>${grantType}</connectedAppGrantType>
+						<properties>
+							<env>${env}</env>
+						</properties>
 					</cloudHubDeployment>
+					<classifier>mule-application</classifier>
 				</configuration>
 			</plugin>
 			<plugin>
