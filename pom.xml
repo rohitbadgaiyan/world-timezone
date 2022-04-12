@@ -3,10 +3,10 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>6b77a403-b331-44a6-8744-5bc5fe931c09</groupId>
-	<artifactId>timezone-v1</artifactId>
+	<artifactId>timezone-v2</artifactId>
 	<version>1.0.0</version>
 	<packaging>mule-application</packaging>
-	<name>timezone</name>
+	<name>timezone-v2</name>
 	<description/>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
