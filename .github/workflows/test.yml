@@ -29,6 +29,13 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
+      # Runs a single command using the runners shell
+      - name: Install Node JS
+        run: sudo apt-get install python-software-properties
+             sudo add-apt-repository ppa:chris-lea/node.js
+             sudo apt-get update
+             sudo apt-get install nodejs npm
+             
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
