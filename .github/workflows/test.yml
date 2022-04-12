@@ -1,3 +1,31 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@rohitbadgaiyan 
+rohitbadgaiyan
+/
+world-timezone
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+Security
+Insights
+Settings
+Update test.yml CI #9
+Summary
+Workflow file
+Jobs
+build
+Workflow file for this run
+.github/workflows/test.yml at 0ad8873
 # This is a basic workflow to help you get started with Actions
 
 name: CI
@@ -31,7 +59,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install Node JS
-        run: sudo apt-get install python-software-properties
+        run: sudo apt-get install software-properties-common
              sudo add-apt-repository ppa:chris-lea/node.js
              sudo apt-get update
              sudo apt-get install nodejs npm
