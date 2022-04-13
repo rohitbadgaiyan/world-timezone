@@ -1,0 +1,1444 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "API for seleting the target platform.",
+    "description": "API for seleting the target platform for sending the logs,error, Email Notification or Creating tickets.",
+    "version": "v1.0"
+  },
+  "host": "0.0.0.0:8091",
+  "basePath": "/auditframework/ruleapi/v1",
+  "x-amf-baseUriParameters": {
+    "version": {
+      "description": "Version of the API in the major.minor format.",
+      "type": "string"
+    }
+  },
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/getrule": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ApplicationName",
+            "description": "Name of the Application",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "Type",
+            "description": "Type of the data.",
+            "required": false,
+            "in": "query",
+            "enum": [
+              "Logs",
+              "Exceptions",
+              "exceptions",
+              "Logs",
+              "logs"
+            ],
+            "type": "string"
+          },
+          {
+            "name": "Env",
+            "description": "Environment details that need to be deleted.",
+            "required": true,
+            "in": "query",
+            "enum": [
+              "Dev",
+              "dev",
+              "QA",
+              "qa",
+              "test",
+              "Test",
+              "Stage",
+              "stage",
+              "UAT",
+              "uat",
+              "PROD",
+              "prod"
+            ],
+            "type": "string"
+          },
+          {
+            "name": "x-correlation-id",
+            "description": "A unique transaction id used to correlate api requests end to end.",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "x-source-system",
+            "description": "A unique identification string for the source system. This could be a system name or hostname where a system is hosted on multiple hosts.",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type"
+            }
+          },
+          "400": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "404": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "405": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "406": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "500": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "501": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "503": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          }
+        },
+        "x-amf-security": [
+          {
+            "common-fragments.clientEnforcement": []
+          }
+        ]
+      }
+    },
+    "/deleterule": {
+      "delete": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "ApplicationName",
+            "description": "Name of the Application",
+            "required": true,
+            "in": "query",
+            "type": "string"
+          },
+          {
+            "name": "Type",
+            "description": "Type of the data.",
+            "required": false,
+            "in": "query",
+            "enum": [
+              "Logs",
+              "Exception"
+            ],
+            "type": "string"
+          },
+          {
+            "name": "Env",
+            "description": "Environment details that need to be deleted.",
+            "required": true,
+            "in": "query",
+            "enum": [
+              "Dev",
+              "QA",
+              "Stage",
+              "PROD"
+            ],
+            "type": "string"
+          },
+          {
+            "name": "x-correlation-id",
+            "description": "A unique transaction id used to correlate api requests end to end.",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "x-source-system",
+            "description": "A unique identification string for the source system. This could be a system name or hostname where a system is hosted on multiple hosts.",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_2"
+            }
+          },
+          "400": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "404": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "405": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "406": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "500": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "501": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "503": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          }
+        },
+        "x-amf-security": [
+          {
+            "common-fragments.clientEnforcement": []
+          }
+        ]
+      }
+    },
+    "/createrule": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-correlation-id",
+            "description": "A unique transaction id used to correlate api requests end to end.",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "x-source-system",
+            "description": "A unique identification string for the source system. This could be a system name or hostname where a system is hosted on multiple hosts.",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "$ref": "#/definitions/type_3"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_4"
+            }
+          },
+          "400": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "404": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "405": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "406": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "500": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "501": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "503": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          }
+        },
+        "x-amf-security": [
+          {
+            "common-fragments.clientEnforcement": []
+          }
+        ]
+      }
+    },
+    "/updaterule": {
+      "patch": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-correlation-id",
+            "description": "A unique transaction id used to correlate api requests end to end.",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "x-source-system",
+            "description": "A unique identification string for the source system. This could be a system name or hostname where a system is hosted on multiple hosts.",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "x-amf-mediaType": "application/json",
+            "in": "body",
+            "name": "generated",
+            "schema": {
+              "$ref": "#/definitions/type_5"
+            }
+          }
+        ],
+        "responses": {
+          "202": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_6"
+            }
+          },
+          "400": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "404": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "405": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "406": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "500": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "501": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "503": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          }
+        },
+        "x-amf-security": [
+          {
+            "common-fragments.clientEnforcement": []
+          }
+        ]
+      }
+    },
+    "/health-check": {
+      "get": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "x-correlation-id",
+            "description": "A unique transaction id used to correlate api requests end to end.",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          },
+          {
+            "name": "x-source-system",
+            "description": "A unique identification string for the source system. This could be a system name or hostname where a system is hosted on multiple hosts.",
+            "required": false,
+            "in": "header",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "example": {
+                "status": "ok"
+              }
+            }
+          },
+          "400": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "404": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "405": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "406": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "500": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "501": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          },
+          "503": {
+            "description": "",
+            "x-amf-mediaType": "application/json",
+            "schema": {
+              "$ref": "#/definitions/type_1"
+            }
+          }
+        },
+        "x-amf-security": [
+          {
+            "common-fragments.clientEnforcement": []
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "type": {
+      "title": "Common Response Format",
+      "description": "The common response format used for all API Calls.",
+      "x-amf-examples": {
+        "example-example": {
+          "data": {
+            "ApplicationName": "App1",
+            "DL": "test@test.com",
+            "Type": "Logs",
+            "systems": [
+              "AuditCheck",
+              "SplunkCheck",
+              "Notification",
+              "TicketCheck"
+            ]
+          }
+        }
+      },
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "data"
+      ],
+      "properties": {
+        "data": {
+          "description": "The actual data returned by the service. If the service is a GET Request, the collection or single resource entity would reside here.",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "ApplicationName",
+            "DL",
+            "Type",
+            "systems"
+          ],
+          "properties": {
+            "ApplicationName": {
+              "example": "App1",
+              "type": "string"
+            },
+            "DL": {
+              "example": "test@test.com, test1@test.com",
+              "type": "string"
+            },
+            "Type": {
+              "example": "Logs",
+              "type": "string"
+            },
+            "systems": {
+              "type": "array"
+            }
+          }
+        },
+        "error": {
+          "description": "An optional object only returned in case of an error.",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "description",
+            "code",
+            "timestamp"
+          ],
+          "properties": {
+            "description": {
+              "description": "A description of the error.",
+              "example": "Missing required header - x-api-correlation-id",
+              "type": "string"
+            },
+            "code": {
+              "description": "A unique code identifying the error.",
+              "example": "API_GET_001",
+              "type": "string"
+            },
+            "timestamp": {
+              "description": "A timestamp identifying the time of the error.",
+              "example": "2020-01-01T00:00:01",
+              "type": "string"
+            },
+            "additionalDetails": {
+              "description": "An optional attribute that could be of any type, usually an object or string that provides extra details around the exception cause.",
+              "x-amf-examples": {
+                "simple-string": "HTTP Header x-correlation-id was provided but failed to be transmitted downstream.",
+                "complex-object": {
+                  "downstream": {
+                    "error": {
+                      "description": "Missing required header - x-correlation-id",
+                      "code": "API_POST_009",
+                      "timestamp": "2020-01-01T00:00:01"
+                    }
+                  }
+                }
+              }
+            },
+            "requestReference": {
+              "description": "Request metadata for the request that caused the error.",
+              "type": "object",
+              "additionalProperties": true,
+              "required": [
+                "method",
+                "uri"
+              ],
+              "properties": {
+                "method": {
+                  "description": "HTTP Method",
+                  "example": "GET",
+                  "type": "string"
+                },
+                "uri": {
+                  "description": "Resource URI",
+                  "example": "/accounts/02020202",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "type_1": {
+      "title": "Common Response Format",
+      "description": "The common response format used for all API Calls.",
+      "x-amf-examples": {
+        "example_2": {
+          "header": {
+            "apiName": "example-api",
+            "apiVersion": "v1.0",
+            "correlationId": "6e560258-4e55-4839-b7d9-29c80f12263d"
+          },
+          "error": {
+            "description": "Internal Server Error",
+            "code": "500",
+            "timestamp": "2021-12-15T15:13:10"
+          }
+        },
+        "amf_example_1": {
+          "header": {
+            "apiName": "example-api",
+            "apiVersion": "v1.0",
+            "correlationId": "6e560258-4e55-4839-b7d9-29c80f12263d"
+          },
+          "error": {
+            "description": "Not Acceptable.",
+            "code": "406",
+            "timestamp": "2021-12-15T15:13:10"
+          }
+        },
+        "example_1": {
+          "header": {
+            "apiName": "example-api",
+            "apiVersion": "v1.0",
+            "correlationId": "6e560258-4e55-4839-b7d9-29c80f12263d"
+          },
+          "error": {
+            "description": "Resource Not Found",
+            "code": "404",
+            "timestamp": "2021-12-15T15:13:10"
+          }
+        },
+        "amf_example_2": {
+          "header": {
+            "apiName": "example-api",
+            "apiVersion": "v1.0",
+            "correlationId": "6e560258-4e55-4839-b7d9-29c80f12263d"
+          },
+          "error": {
+            "description": "Not Implemented.",
+            "code": "501",
+            "timestamp": "2021-12-15T15:13:10"
+          }
+        },
+        "example_0": {
+          "header": {
+            "apiName": "example-api",
+            "apiVersion": "v1.0",
+            "correlationId": "6e560258-4e55-4839-b7d9-29c80f12263d"
+          },
+          "error": {
+            "description": "Method Not Allowed",
+            "code": "405",
+            "timestamp": "2021-12-15T15:13:10"
+          }
+        },
+        "amf_example_3": {
+          "header": {
+            "apiName": "example-api",
+            "apiVersion": "v1.0",
+            "correlationId": "6e560258-4e55-4839-b7d9-29c80f12263d"
+          },
+          "error": {
+            "description": "Required field 'name' missing.",
+            "code": "400",
+            "timestamp": "2021-12-15T15:13:10"
+          }
+        },
+        "example_3": {
+          "header": {
+            "apiName": "example-api",
+            "apiVersion": "v1.0",
+            "correlationId": "6e560258-4e55-4839-b7d9-29c80f12263d"
+          },
+          "error": {
+            "description": "Service Unavailable.",
+            "code": "503",
+            "timestamp": "2021-12-15T15:13:10"
+          }
+        }
+      },
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "header"
+      ],
+      "properties": {
+        "header": {
+          "description": "",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "apiName",
+            "apiVersion",
+            "correlationId"
+          ],
+          "properties": {
+            "apiName": {
+              "description": "Name of the API",
+              "example": "Simple Broker API",
+              "type": "string"
+            },
+            "apiVersion": {
+              "description": "Version of the API",
+              "example": "v1.0.0",
+              "type": "string"
+            },
+            "correlationId": {
+              "description": "A unique UUID for the request.",
+              "example": "101-aaa-bbb-ccc-ddd-202",
+              "type": "string"
+            }
+          }
+        },
+        "data": {
+          "description": "The actual data returned by the service. If the service is a GET Request, the collection or single resource entity would reside here.",
+          "example": {
+            "statusMessage": "Created User in Workday",
+            "userId": "2294738"
+          },
+          "type": "object",
+          "additionalProperties": true
+        },
+        "error": {
+          "description": "An optional object only returnED in case of an error.",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "description",
+            "code",
+            "timestamp"
+          ],
+          "properties": {
+            "description": {
+              "description": "A description of the error.",
+              "example": "Missing required header - x-api-correlation-id",
+              "type": "string"
+            },
+            "code": {
+              "description": "A unique code identifying the error.",
+              "example": "API_GET_001",
+              "type": "string"
+            },
+            "timestamp": {
+              "description": "A timestamp identifying the time of the error.",
+              "example": "2021-12-15T15:13:10",
+              "type": "string"
+            },
+            "additionalDetails": {
+              "description": "An optional attribute that could be of any type, usually an object or string that provides extra details around the exception cause.",
+              "x-amf-examples": {
+                "simple-string": "HTTP Header x-correlation-id was provided but failed to be transmitted downstream.",
+                "complex-object": {
+                  "downstream": {
+                    "error": {
+                      "description": "Missing required header - x-correlation-id",
+                      "code": "API_POST_009",
+                      "timestamp": "2021-12-15T15:13:10"
+                    }
+                  }
+                }
+              }
+            },
+            "requestReference": {
+              "description": "Request metadata for the request that caused the error.",
+              "type": "object",
+              "additionalProperties": true,
+              "required": [
+                "method",
+                "uri"
+              ],
+              "properties": {
+                "method": {
+                  "description": "HTTP Method",
+                  "example": "GET",
+                  "type": "string"
+                },
+                "uri": {
+                  "description": "Resource URI",
+                  "example": "/accounts/02020202",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "type_2": {
+      "title": "Response Format for delete rule",
+      "description": "Response Format for delete rule.",
+      "x-amf-examples": {
+        "example-example": {
+          "data": {
+            "ApplicationName": "App1",
+            "Status": "Success",
+            "Message": "Application is deleted. (Soft Delete)"
+          }
+        }
+      },
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "data"
+      ],
+      "properties": {
+        "data": {
+          "description": "The actual data returned by the service. If the service is a DELETE Request. This is soft delete and update the status to inactive.",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "ApplicationName",
+            "Status",
+            "Message"
+          ],
+          "properties": {
+            "ApplicationName": {
+              "example": "App1",
+              "type": "string"
+            },
+            "Status": {
+              "example": "Application has been deleted",
+              "type": "string"
+            },
+            "Message": {
+              "example": "Application has been deleted",
+              "type": "string"
+            }
+          }
+        },
+        "error": {
+          "description": "An optional object only returned in case of an error.",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "description",
+            "code",
+            "timestamp"
+          ],
+          "properties": {
+            "description": {
+              "description": "A description of the error.",
+              "example": "Missing required header - x-api-correlation-id",
+              "type": "string"
+            },
+            "code": {
+              "description": "A unique code identifying the error.",
+              "example": "API_GET_001",
+              "type": "string"
+            },
+            "timestamp": {
+              "description": "A timestamp identifying the time of the error.",
+              "example": "2020-01-01T00:00:01",
+              "type": "string"
+            },
+            "additionalDetails": {
+              "description": "An optional attribute that could be of any type, usually an object or string that provides extra details around the exception cause.",
+              "x-amf-examples": {
+                "simple-string": "HTTP Header x-correlation-id was provided but failed to be transmitted downstream.",
+                "complex-object": {
+                  "downstream": {
+                    "error": {
+                      "description": "Missing required header - x-correlation-id",
+                      "code": "API_POST_009",
+                      "timestamp": "2020-01-01T00:00:01"
+                    }
+                  }
+                }
+              }
+            },
+            "requestReference": {
+              "description": "Request metadata for the request that caused the error.",
+              "type": "object",
+              "additionalProperties": true,
+              "required": [
+                "method",
+                "uri"
+              ],
+              "properties": {
+                "method": {
+                  "description": "HTTP Method",
+                  "example": "GET",
+                  "type": "string"
+                },
+                "uri": {
+                  "description": "Resource URI",
+                  "example": "/accounts/02020202",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "type_3": {
+      "title": "Request Format for Create Rule",
+      "description": "Request Format for Create Rule",
+      "x-amf-examples": {
+        "request": {
+          "ApplicationName": "App1",
+          "AuditCheck": true,
+          "SplunkCheck": true,
+          "Notification": true,
+          "TicketCheck": true,
+          "Type": "Log",
+          "Active": true,
+          "DL": "test@test.com",
+          "Env": "Dev"
+        }
+      },
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "ApplicationName",
+        "AuditCheck",
+        "SplunkCheck",
+        "Notification",
+        "TicketCheck",
+        "Type",
+        "Active",
+        "DL",
+        "Env"
+      ],
+      "properties": {
+        "ApplicationName": {
+          "example": "App1",
+          "type": "string"
+        },
+        "AuditCheck": {
+          "example": true,
+          "type": "boolean"
+        },
+        "SplunkCheck": {
+          "example": true,
+          "type": "boolean"
+        },
+        "Notification": {
+          "example": true,
+          "type": "boolean"
+        },
+        "TicketCheck": {
+          "example": true,
+          "type": "boolean"
+        },
+        "Type": {
+          "example": "Log",
+          "type": "string"
+        },
+        "Active": {
+          "example": true,
+          "type": "boolean"
+        },
+        "DL": {
+          "example": "test@test.com",
+          "type": "string"
+        },
+        "Env": {
+          "example": "Dev",
+          "type": "string"
+        },
+        "error": {
+          "description": "An optional object only returned in case of an error.",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "description",
+            "code",
+            "timestamp"
+          ],
+          "properties": {
+            "description": {
+              "description": "A description of the error.",
+              "example": "Missing required header - x-api-correlation-id",
+              "type": "string"
+            },
+            "code": {
+              "description": "A unique code identifying the error.",
+              "example": "API_GET_001",
+              "type": "string"
+            },
+            "timestamp": {
+              "description": "A timestamp identifying the time of the error.",
+              "example": "2020-01-01T00:00:01",
+              "type": "string"
+            },
+            "additionalDetails": {
+              "description": "An optional attribute that could be of any type, usually an object or string that provides extra details around the exception cause.",
+              "x-amf-examples": {
+                "simple-string": "HTTP Header x-correlation-id was provided but failed to be transmitted downstream.",
+                "complex-object": {
+                  "downstream": {
+                    "error": {
+                      "description": "Missing required header - x-correlation-id",
+                      "code": "API_POST_009",
+                      "timestamp": "2020-01-01T00:00:01"
+                    }
+                  }
+                }
+              }
+            },
+            "requestReference": {
+              "description": "Request metadata for the request that caused the error.",
+              "type": "object",
+              "additionalProperties": true,
+              "required": [
+                "method",
+                "uri"
+              ],
+              "properties": {
+                "method": {
+                  "description": "HTTP Method",
+                  "example": "GET",
+                  "type": "string"
+                },
+                "uri": {
+                  "description": "Resource URI",
+                  "example": "/accounts/02020202",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "type_4": {
+      "title": "Response Format for create rule",
+      "description": "Response Format for create rule.",
+      "x-amf-examples": {
+        "response": {
+          "data": {
+            "ApplicationName": "App1",
+            "Status": "Success",
+            "Message": "Record has been created"
+          }
+        }
+      },
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "data"
+      ],
+      "properties": {
+        "data": {
+          "description": "The actual data returned by the service. If the service is a POST Request. This is soft delete and update the status to inactive.",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "ApplicationName",
+            "Status",
+            "Message"
+          ],
+          "properties": {
+            "ApplicationName": {
+              "example": "App1",
+              "type": "string"
+            },
+            "Status": {
+              "example": "Success",
+              "type": "string"
+            },
+            "Message": {
+              "example": "Record has been created",
+              "type": "string"
+            }
+          }
+        },
+        "error": {
+          "description": "An optional object only returned in case of an error.",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "description",
+            "code",
+            "timestamp"
+          ],
+          "properties": {
+            "description": {
+              "description": "A description of the error.",
+              "example": "Missing required header - x-api-correlation-id",
+              "type": "string"
+            },
+            "code": {
+              "description": "A unique code identifying the error.",
+              "example": "API_GET_001",
+              "type": "string"
+            },
+            "timestamp": {
+              "description": "A timestamp identifying the time of the error.",
+              "example": "2020-01-01T00:00:01",
+              "type": "string"
+            },
+            "additionalDetails": {
+              "description": "An optional attribute that could be of any type, usually an object or string that provides extra details around the exception cause.",
+              "x-amf-examples": {
+                "simple-string": "HTTP Header x-correlation-id was provided but failed to be transmitted downstream.",
+                "complex-object": {
+                  "downstream": {
+                    "error": {
+                      "description": "Missing required header - x-correlation-id",
+                      "code": "API_POST_009",
+                      "timestamp": "2020-01-01T00:00:01"
+                    }
+                  }
+                }
+              }
+            },
+            "requestReference": {
+              "description": "Request metadata for the request that caused the error.",
+              "type": "object",
+              "additionalProperties": true,
+              "required": [
+                "method",
+                "uri"
+              ],
+              "properties": {
+                "method": {
+                  "description": "HTTP Method",
+                  "example": "GET",
+                  "type": "string"
+                },
+                "uri": {
+                  "description": "Resource URI",
+                  "example": "/accounts/02020202",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "type_5": {
+      "title": "Request Format for Create Rule",
+      "description": "Request Format for Create Rule",
+      "x-amf-examples": {
+        "request": {
+          "ApplicationName": "App1",
+          "AuditCheck": true,
+          "SplunkCheck": true,
+          "Notification": true,
+          "TicketCheck": true,
+          "Type": "Logs",
+          "Active": true,
+          "DL": "test@test.com",
+          "Env": "Dev"
+        }
+      },
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "ApplicationName": {
+          "example": "App1",
+          "type": "string"
+        },
+        "AuditCheck": {
+          "example": true,
+          "type": "boolean"
+        },
+        "SplunkCheck": {
+          "example": true,
+          "type": "boolean"
+        },
+        "Notification": {
+          "example": true,
+          "type": "boolean"
+        },
+        "TicketCheck": {
+          "example": true,
+          "type": "boolean"
+        },
+        "Type": {
+          "example": "Log",
+          "type": "string"
+        },
+        "Active": {
+          "example": true,
+          "type": "boolean"
+        },
+        "DL": {
+          "example": "test@test.com",
+          "type": "string"
+        },
+        "Env": {
+          "example": "Dev",
+          "type": "string"
+        },
+        "error": {
+          "description": "An optional object only returned in case of an error.",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "description",
+            "code",
+            "timestamp"
+          ],
+          "properties": {
+            "description": {
+              "description": "A description of the error.",
+              "example": "Missing required header - x-api-correlation-id",
+              "type": "string"
+            },
+            "code": {
+              "description": "A unique code identifying the error.",
+              "example": "API_GET_001",
+              "type": "string"
+            },
+            "timestamp": {
+              "description": "A timestamp identifying the time of the error.",
+              "example": "2020-01-01T00:00:01",
+              "type": "string"
+            },
+            "additionalDetails": {
+              "description": "An optional attribute that could be of any type, usually an object or string that provides extra details around the exception cause.",
+              "x-amf-examples": {
+                "simple-string": "HTTP Header x-correlation-id was provided but failed to be transmitted downstream.",
+                "complex-object": {
+                  "downstream": {
+                    "error": {
+                      "description": "Missing required header - x-correlation-id",
+                      "code": "API_POST_009",
+                      "timestamp": "2020-01-01T00:00:01"
+                    }
+                  }
+                }
+              }
+            },
+            "requestReference": {
+              "description": "Request metadata for the request that caused the error.",
+              "type": "object",
+              "additionalProperties": true,
+              "required": [
+                "method",
+                "uri"
+              ],
+              "properties": {
+                "method": {
+                  "description": "HTTP Method",
+                  "example": "GET",
+                  "type": "string"
+                },
+                "uri": {
+                  "description": "Resource URI",
+                  "example": "/accounts/02020202",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "type_6": {
+      "title": "Response Format for update rule",
+      "description": "Response Format for update rule.",
+      "x-amf-examples": {
+        "response": {
+          "data": {
+            "ApplicationName": "App1",
+            "Status": "Success",
+            "Message": "Record has been updated"
+          }
+        }
+      },
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "data"
+      ],
+      "properties": {
+        "data": {
+          "description": "The actual data returned by the service. If the service is a PATCH Request. This is soft delete and update the status to inactive.",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "ApplicationName",
+            "Status",
+            "Message"
+          ],
+          "properties": {
+            "ApplicationName": {
+              "example": "App1",
+              "type": "string"
+            },
+            "Status": {
+              "example": "Success",
+              "type": "string"
+            },
+            "Message": {
+              "example": "Record has been created",
+              "type": "string"
+            }
+          }
+        },
+        "error": {
+          "description": "An optional object only returned in case of an error.",
+          "type": "object",
+          "additionalProperties": true,
+          "required": [
+            "description",
+            "code",
+            "timestamp"
+          ],
+          "properties": {
+            "description": {
+              "description": "A description of the error.",
+              "example": "Missing required header - x-api-correlation-id",
+              "type": "string"
+            },
+            "code": {
+              "description": "A unique code identifying the error.",
+              "example": "API_GET_001",
+              "type": "string"
+            },
+            "timestamp": {
+              "description": "A timestamp identifying the time of the error.",
+              "example": "2020-01-01T00:00:01",
+              "type": "string"
+            },
+            "additionalDetails": {
+              "description": "An optional attribute that could be of any type, usually an object or string that provides extra details around the exception cause.",
+              "x-amf-examples": {
+                "simple-string": "HTTP Header x-correlation-id was provided but failed to be transmitted downstream.",
+                "complex-object": {
+                  "downstream": {
+                    "error": {
+                      "description": "Missing required header - x-correlation-id",
+                      "code": "API_POST_009",
+                      "timestamp": "2020-01-01T00:00:01"
+                    }
+                  }
+                }
+              }
+            },
+            "requestReference": {
+              "description": "Request metadata for the request that caused the error.",
+              "type": "object",
+              "additionalProperties": true,
+              "required": [
+                "method",
+                "uri"
+              ],
+              "properties": {
+                "method": {
+                  "description": "HTTP Method",
+                  "example": "GET",
+                  "type": "string"
+                },
+                "uri": {
+                  "description": "Resource URI",
+                  "example": "/accounts/02020202",
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
