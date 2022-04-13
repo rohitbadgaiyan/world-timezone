@@ -59,8 +59,8 @@ jobs:
 
       - name: Publish the Project
         run: |
+          ls -a
           export ANYPOINT_CLIENT_ID=6a12a864a1c445948c8dd8ad0cabe1d9
           export ANYPOINT_CLIENT_SECRET=58d6b475fED84132AF21F8480EfF6eAf
-          anypoint-cli designcenter project create --type raml test
-          anypoint-cli designcenter project upload test ./
+          anypoint-cli designcenter project upload test world-timezone/api.json
           
