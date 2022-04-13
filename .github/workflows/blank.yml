@@ -40,8 +40,9 @@ jobs:
         run: npm install -g anypoint-cli@latest
 
       - name: Create Anypoint Dir
-        run: mkdir ~/.anypoint
-             ls -lrt ~/.
+        run: |
+          mkdir ~/.anypoint
+          ls -ltr ~/.
         
       - name: Create Credetial File.
         run: touch credentials
