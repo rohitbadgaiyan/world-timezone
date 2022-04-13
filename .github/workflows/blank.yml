@@ -40,14 +40,14 @@ jobs:
       - name: Install CLI
         run: npm install -g anypoint-cli@latest
 
-      - name: Create Anypoint Dir
-        run: |
-          mkdir ~/.anypoint
-          ls -a ~/.
-          cd ~/.
-          export ANYPOINT_CLIENT_ID=6a12a864a1c445948c8dd8ad0cabe1d9
-          export ANYPOINT_CLIENT_SECRET=58d6b475fED84132AF21F8480EfF6eAf
-          anypoint-cli designcenter project create --type raml test
+      #- name: Create Anypoint Dir
+      #  run: |
+      #    mkdir ~/.anypoint
+      #    ls -a ~/.
+      #    cd ~/.
+      #    export ANYPOINT_CLIENT_ID=6a12a864a1c445948c8dd8ad0cabe1d9
+      #    export ANYPOINT_CLIENT_SECRET=58d6b475fED84132AF21F8480EfF6eAf
+          
           
       - name: Create Credetial File.
         run: touch credentialscredentials
@@ -56,3 +56,11 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+
+      - name: Publish the Project
+        run: |
+          export ANYPOINT_CLIENT_ID=6a12a864a1c445948c8dd8ad0cabe1d9
+          export ANYPOINT_CLIENT_SECRET=58d6b475fED84132AF21F8480EfF6eAf
+          anypoint-cli designcenter project create --type raml test
+          anypoint-cli designcenter project upload test ./
+          
