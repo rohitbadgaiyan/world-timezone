@@ -42,7 +42,7 @@ jobs:
       - name: Create Anypoint Dir
         run: |
           mkdir ~/.anypoint
-          ls -ltr ~/.
+          ls -a ~/.
         
       - name: Create Credetial File.
         run: touch credentials
