@@ -62,5 +62,5 @@ jobs:
           ls -a
           export ANYPOINT_CLIENT_ID=6a12a864a1c445948c8dd8ad0cabe1d9
           export ANYPOINT_CLIENT_SECRET=58d6b475fED84132AF21F8480EfF6eAf
-          anypoint-cli designcenter project upload test world-timezone/api.json
+          anypoint-cli designcenter project upload test api.json
           
