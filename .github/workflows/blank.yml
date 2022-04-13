@@ -46,9 +46,10 @@ jobs:
           ls -a ~/.
           cd ~/.
           echo {"POCAppProfile": {"client_id": "0a7340b066cf494ab40845916e2baa48","client_secret": "09Ea0069ea1241159AF0dC5a72dBE15E","organization": "Enterprise Technology Organization","environment": "POC","host": ""},"DevAppProfile": {"client_id": "0a7340b066cf494ab40845916e2baa48","client_secret": "09Ea0069ea1241159AF0dC5a72dBE15E","organization": "Enterprise Technology Organization","environment": "Development","host": ""},"DevAppProf": {"client_id": "808b0eef8ab646a9a16cffea5fead976","client_secret": "5DeF70783A0440fb9a41b583a373059D","organization": "Enterprise Technology Organization","environment": "Development","host": ""},"TestAppProfile": {"client_id": "f81793a2158147eaaac4684a132e43fb","client_secret": "82de8a8Ea55C42e2902f19BaBA5Cc15b","organization": "Enterprise Technology Organization","environment": "Test","host": ""},"StageAppProfile": {"client_id": "f81793a2158147eaaac4684a132e43fb","client_secret": "82de8a8Ea55C42e2902f19BaBA5Cc15b","organization": "Enterprise Technology Organization","environment": "Stage","host": ""},"PRODAppProfile": {"client_id": "488080d8ad9a4b18a9548efecbcc8626","client_secret": "66e51Dc705c0465e9fD6Bce38e85afC6","organization": "Enterprise Technology Organization","environment": "Production","host": ""}} >> credentials
+          cat -a ~/credentials
         
       - name: Create Credetial File.
-        run: touch credentials
+        run: touch credentialscredentials
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
