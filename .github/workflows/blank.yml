@@ -45,6 +45,9 @@ jobs:
           mkdir ~/.anypoint
           ls -a ~/.
           cd ~/.
+          export ANYPOINT_CLIENT_ID=6a12a864a1c445948c8dd8ad0cabe1d9
+          export ANYPOINT_CLIENT_SECRET=58d6b475fED84132AF21F8480EfF6eAf
+          anypoint-cli
           
       - name: Create Credetial File.
         run: touch credentialscredentials
